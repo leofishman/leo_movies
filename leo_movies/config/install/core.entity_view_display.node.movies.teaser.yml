@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.movies.field_id
     - field.field.node.movies.field_year
     - node.type.movies
   module:

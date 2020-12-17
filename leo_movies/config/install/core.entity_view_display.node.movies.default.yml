@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.movies.field_id
+    - field.field.node.movies.field_movie_id
     - field.field.node.movies.field_year
     - node.type.movies
   module:
@@ -12,27 +12,26 @@ targetEntityType: node
 bundle: movies
 mode: default
 content:
-  field_id:
-    weight: 101
+  field_movie_id:
+    weight: 1
     label: above
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
+      link_to_entity: false
     third_party_settings: {  }
-    type: number_integer
+    type: string
     region: content
   field_year:
-    weight: 102
+    type: number_integer
+    weight: 2
+    region: content
     label: above
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_integer
-    region: content
   links:
-    weight: 100
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }
