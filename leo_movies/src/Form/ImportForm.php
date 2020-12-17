@@ -22,14 +22,6 @@ class ImportForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  protected function getEditableConfigNames() {
-    return ['leo_movies.settings'];
-  }
-
-
-  /**
-   * {@inheritdoc}
-   */
   public function buildForm(array $form, FormStateInterface $form_state, Request $request = NULL) {
 
     $form = array(
@@ -37,7 +29,7 @@ class ImportForm extends FormBase {
     );
 
     $validators = array(
-      'file_validate_extensions' => array('pdf'),
+      'file_validate_extensions' => array('csv'),
     );
 
     $form['csv_movies_file'] = array(
@@ -64,8 +56,13 @@ class ImportForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-
-    ksm($form_state->getValue('csv_movies_file'));
+    $fid = reset($form_state->getValue('csv_movies_file'));
+    $file = File::load($fid);
+    $size= $file->getSize();
+    // Check that file has at least 20 characters (movies id,year,title)
+    if ($size < 20) {
+      $form_state->setErrorByName('csv_movies_file', $this->t('File empty'));
+    }
     parent::validateForm($form, $form_state);
   }
 
