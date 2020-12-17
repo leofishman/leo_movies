@@ -1,0 +1,6 @@
+leo_movies.settings_form:
+  title: leo_movies
+  description: Configure leo_movies.
+  parent: system.admin_config_system
+  route_name: leo_movies.settings_form
+  weight: 10

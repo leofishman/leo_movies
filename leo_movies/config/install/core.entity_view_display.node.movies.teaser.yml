@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.movies.field_id
+    - field.field.node.movies.field_year
+    - node.type.movies
+  module:
+    - user
+id: node.movies.teaser
+targetEntityType: node
+bundle: movies
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_id: true
+  field_year: true

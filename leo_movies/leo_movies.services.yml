@@ -1,0 +1,3 @@
+services:
+  leo_movies.parse_movies_csv:
+    class: Drupal\leo_movies\CsvMoviesParser

@@ -1,0 +1,15 @@
+leo_movies.example:
+  path: '/leo-movies/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\leo_movies\Controller\LeoMoviesController::build'
+  requirements:
+    _permission: 'access content'
+
+leo_movies.settings_form:
+  path: '/admin/config/system/leo-movies'
+  defaults:
+    _title: 'leo_movies settings'
+    _form: 'Drupal\leo_movies\Form\SettingsForm'
+  requirements:
+    _permission: 'administer leo_movies configuration'

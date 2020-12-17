@@ -1,0 +1,10 @@
+name: leo_movies
+type: module
+description: Parse csv files into movie content_type and gives an endpoint /movie/{movie_id}
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - node
+  - form
+  - file
