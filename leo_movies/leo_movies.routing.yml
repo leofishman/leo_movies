@@ -1,15 +1,15 @@
-leo_movies.example:
-  path: '/leo-movies/example'
+leo_movies.parse:
+  path: '/leo-movies/parse'
   defaults:
-    _title: 'Example'
+    _title: 'CSV Parser'
     _controller: '\Drupal\leo_movies\Controller\LeoMoviesController::build'
   requirements:
-    _permission: 'access content'
+    _permission: 'manage content'
 
-leo_movies.settings_form:
-  path: '/admin/config/system/leo-movies'
+leo_movies.import_form:
+  path: '/leo-movies/import'
   defaults:
-    _title: 'leo_movies settings'
-    _form: 'Drupal\leo_movies\Form\SettingsForm'
+    _title: 'Import Movies'
+    _form: 'Drupal\leo_movies\Form\ImportForm'
   requirements:
     _permission: 'administer leo_movies configuration'
